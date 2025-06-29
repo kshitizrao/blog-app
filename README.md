@@ -1,6 +1,3 @@
-# blog-app
-CRUD Blog app API with user authentication using fastAPI
-
 # 📝 Blog API with FastAPI
 
 A fully functional **Blog API** built using **FastAPI**, featuring:
