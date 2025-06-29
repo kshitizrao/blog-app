@@ -1,5 +1,5 @@
 from pydantic import BaseModel
-from typing import List
+from typing import List, Optional
 
 
 
@@ -28,3 +28,16 @@ class showBlog(BaseModel): # This is a Pydantic model for displaying a blog entr
         orm_mode = True
         # This allows the model to work with ORM objects, enabling serialization and deserialization of ORM models
         # It tells Pydantic to treat the ORM model as a dictionary-like object, allowing it to read attributes directly from the ORM model
+
+
+class Login(BaseModel):
+    username : str
+    password : str
+
+class Token(BaseModel):
+    access_token: str
+    token_type: str
+
+
+class TokenData(BaseModel):
+    email : Optional[str] = None

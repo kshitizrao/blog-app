@@ -13,3 +13,10 @@ SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
 # SessionLocal is a session factory that will create new Session objects when called
 Base = declarative_base()
 # Base is the declarative base class that maintains a catalog of classes and tables relative to that base
+
+def get_db():
+    db = SessionLocal()
+    try:
+        yield db
+    finally:
+        db.close()
